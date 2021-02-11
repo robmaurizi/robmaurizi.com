@@ -13,12 +13,17 @@
     margin: 0;
     font-weight: normal;
     font-size: .9375rem;
-    // text-align: right;
     padding-right: .5em;
     word-wrap: nowrap;
 
     &.item-head {
         margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .resume-skill-title {
+        text-align: right;
     }
 }
 
