@@ -1,0 +1,7 @@
+.post-thumbnail {
+
+    img {
+        filter: grayscale(.75);
+        transition: filter .5s ease;
+    }
+}

@@ -1,0 +1,87 @@
+@import './Common.scss';
+
+.resume-skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5em;
+
+}
+
+.resume-skill-title {
+    flex-basis: 45%;
+    margin: 0;
+    font-weight: normal;
+    font-size: .9375rem;
+    // text-align: right;
+    padding-right: .5em;
+    word-wrap: nowrap;
+
+    &.item-head {
+        margin-bottom: 0;
+    }
+}
+
+.resume-skill-rating {
+    position: relative;
+    flex-basis: 55%;
+
+    .resume-skill-rating-text {
+        position: absolute;
+        display: block;
+        left: -9999em;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    &[data-rating="5"] {
+        i {
+            background-color: #900;
+        }
+    }
+
+    &[data-rating="4"] {
+        i:nth-of-type(-n+4) {
+            background-color: #900;
+        }
+    }
+
+    &[data-rating="3"] {
+        i:nth-of-type(-n+3) {
+            background-color: #900;
+        }
+    }
+
+    &[data-rating="2"] {
+        i:nth-of-type(-n+2) {
+            background-color: #900;
+        }
+    }
+
+    &[data-rating="1"] {
+        i:nth-of-type(1) {
+            background-color: #900;
+        }
+    }
+
+}
+
+.resume-skill-rating-graph {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+
+    i {
+        display: block;
+        width: calc(20% - 4px);
+        background-color: rgba($color_copy, .35);
+        height: 3px;
+        margin-left: 4px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}

@@ -1,0 +1,187 @@
+@import './Common.scss';
+
+.single-post-content {
+    max-width: 48rem;
+    margin: 0 auto;
+
+    .cms-content {
+        font-size: 1.375rem;
+        line-height: 1.5;
+
+        .wp-block-image {
+            max-width: 100%;
+
+            img {
+                max-width: 100%;
+                display: block;
+                height: auto;
+                position: relative;
+                width: 100%;
+            }
+
+            .alignright {
+
+                @media screen and (min-width: 768px) {
+                    float: right;
+                    margin: .5em 0 .5em 1em;
+                    display: table;
+    
+                    figcaption {
+                        display: table-caption;
+                        caption-side: bottom;
+                    }
+                }
+
+            }
+
+            .alignleft {
+
+                @media screen and (min-width: 768px) {
+                    float: left;
+                    margin: .5em 1em .5em 0;
+                    display: table;
+    
+                    figcaption {
+                        display: table-caption;
+                        caption-side: bottom;
+                    }
+                }
+            }
+
+            .aligncenter {
+                @media screen and (min-width: 768px) {
+                    margin: 0 auto .5em;
+                    display: table;
+    
+                    figcaption {
+                        display: table-caption;
+                        caption-side: bottom;
+                    }
+                }
+            }
+
+            &.alignwide {
+
+                @media screen and (min-width: 768px) {
+                    width: auto;
+                    max-width: none;
+                    margin: 0 calc(15% - 15vw) .5em;
+    
+                    img {
+                        width: 100%;
+                    }
+                }
+
+            }
+
+        }
+
+        *.alignfull {
+            width: 100vw;
+            margin: 0 calc(50% - 50vw) .5em;
+
+            > figcaption {
+                @media screen and ( min-width: 768px) {
+                    max-width: 75%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+
+
+
+        figcaption {
+            max-width: 100%;
+            font-family: $font_headline;
+            text-align: center;
+            opacity: .5;
+            font-size: 75%;
+            line-height: 1.25;
+            padding: .5em;
+        }
+
+
+        .wp-block-gallery {
+            list-style-type: none;
+            padding: 0;
+
+            .blocks-gallery-grid {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+
+                @media screen and (min-width: 768px) {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                .blocks-gallery-item {
+                    margin: 0 0 1em;
+                    display: flex;
+                    flex-grow: 1;
+                    flex-direction: column;
+                    justify-content: center;
+                    position: relative;
+
+                    @media screen and (min-width: 768px) {
+                        margin: 0 1em 1em 0;
+                        width: calc(50% - 1em);
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+
+            }
+
+            &.columns-3 {
+                .blocks-gallery-item {
+
+                    @media screen and (min-width: 768px) {
+                        width: calc(33.33333% - .66667em);
+                    }
+
+                    &:nth-of-type(3n) {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        
+        
+
+    }
+}
+
+.single-post-featured-image {
+    margin: 0 calc(50% - 50vw);
+
+    img {
+        width: 100%;
+    }
+}
+
+.post-footer {
+    font-family: $font_headline;
+    border-top: 1px solid $color_copy;
+    padding: 2em 0;
+
+    .post-byline {
+        margin-bottom: 1em;
+    }
+
+    .post-meta-list {
+        margin-right: 1em;
+        margin-bottom: .5em;
+    }
+
+    @media screen and (min-width: 768px) {
+        .post-meta {
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+
+}

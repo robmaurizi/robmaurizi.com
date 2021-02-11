@@ -1,0 +1,71 @@
+@import '../styles/Common.scss';
+
+.post-card {
+
+    margin-bottom: 30px;
+    padding-bottom: 1em;
+    border-bottom: 1px solid $color_copy;
+
+    &:hover {
+        .post-thumbnail img {
+            filter: grayscale(0);
+        }
+    }
+
+    .post-thumbnail {
+        position: relative;
+        height: 0;
+        padding-top: 56.25%;
+        overflow: hidden;
+
+        margin: 0 0 .5em;
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+
+    div.post-thumbnail {
+        background: rgba($color_copy, .1);
+        position: relative;
+        &:after {
+            content: 'Image TK';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-family: $font_headline;
+            opacity: .5;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        div.post-thumbnail {
+            display: none;
+        }
+    }
+
+    .post-title {
+        margin: 0 0 .5em;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: .125em;
+        }
+    }
+
+    .post-byline,
+    .post-meta {
+        font-family: $font_headline;
+        margin-bottom: .5em;
+    }
+
+    .post-excerpt {
+        font-size: 1rem;
+        line-height: 1.35;
+        word-break: break-word;
+    }
+
+}

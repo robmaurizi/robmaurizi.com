@@ -1,0 +1,41 @@
+@import './Common.scss';
+.post-list {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: stretch;
+    
+        .post-card {
+            flex-basis: calc(calc(100%/3) - 20px);
+            margin-right: 30px;
+
+            &:nth-of-type(3n) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.posts-load-more {
+    width: 100%;
+    font-family: $font_headline;
+    font-weight: normal;
+    border: none;
+    background-color: $color_copy;
+    color: $color_bg;
+    padding: .5em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    display: block;
+
+    @media screen and (min-width: 768px) {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+.posts-loading {
+    display: block;
+    margin: 0 auto;
+}

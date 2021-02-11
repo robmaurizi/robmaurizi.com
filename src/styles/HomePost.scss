@@ -1,0 +1,56 @@
+@import './Common.scss';
+
+@media screen and (min-width: 768px) {
+
+    .home-post {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .home-post-featured {
+        flex-basis: 48%;
+        margin: 0;
+    }
+    
+    .home-post-content {
+        flex-basis: 48%;
+    }
+    
+}
+
+.home-post-featured {
+    margin-bottom: 1em;
+}
+
+.home-post-title {
+    font-family: $font_headline;
+    font-size: 1.75rem;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.home-post-excerpt {
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+.home-post-link {
+    text-align: right;
+    // font-family: $font_headline;
+    // text-transform: uppercase;
+    font-size: 1.125rem;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            span {
+                text-decoration: underline;
+            }
+        }
+    }
+}

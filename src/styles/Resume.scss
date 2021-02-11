@@ -1,0 +1,204 @@
+@import './Common.scss';
+
+.resume-container {
+    max-width: 64rem;
+
+    p,
+    ul ul {
+        font-size: 1.125rem;
+        line-height: 1.5;
+        margin: 0 0 1em;
+    }
+
+    .section-container {
+        // border-bottom: 2px solid rgba($color_copy, .35);
+        padding-bottom: 1em;
+
+        &:last-child {
+            border: none;
+        }
+    }
+
+    .section-head {
+        margin-top: 0;
+    }
+
+    ul {
+        list-style-type: none;
+        margin-left: 0;
+        padding: 0;
+
+        ul {
+            list-style-type: disc;
+            margin-left: 1em;
+
+            li {
+                margin-bottom: .5em;
+            }
+        }
+    }
+
+}
+
+.section-head,
+.item-head {
+    font-family: $font_headline;
+    margin-bottom: 0;
+}
+
+.item-head {
+    margin-bottom: .5em;
+
+    a {
+        font-weight: normal;
+    }
+}
+
+
+.resume-profile {
+    p {
+        margin-top: 1em;
+    }
+}
+
+.resume-contact {
+    .item-head {
+        margin-top: 0;
+    }
+
+    p {
+        margin: 0 0 .5em;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .resume-skills {
+        ul {
+            font-size: .9375rem;
+            margin-top: 1em;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+    
+            li {
+                flex-basis: calc(50% - 50px);
+                margin-right: 50px;
+    
+                &:nth-of-type(2n) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .resume-container {
+        // display: grid;
+        // grid-template-columns: 70% 30%;
+        // grid-auto-rows: 100%;
+        // grid-template-rows: 100%;
+        // grid-auto-flow: column dense;
+        // display: flex;
+        // flex-direction: column;
+        // flex-wrap: wrap;
+        // justify-content: flex-start;
+        // align-items: space-between;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .section-container {
+        // border-top: 2px dotted #900;
+        width: auto;
+    }
+
+    .resume-profile {
+        order: 1;
+        justify-self: flex-start;
+        flex-basis: 70%;
+    }
+
+    .resume-contact {
+        order: 2;
+        justify-self: flex-end;
+        flex-basis: 25%;
+    }
+
+    .resume-experience {
+        order: 4;
+        flex-basis: 70%;
+    }
+
+    .resume-skills {
+        order: 3;
+
+        ul {
+            // display: flex;
+            // justify-content: space-around;
+            // flex-wrap: wrap;
+
+            li {
+                flex-basis: calc(25% - 20px);
+                margin-right: 20px;
+
+                &:nth-of-type(2n) {
+                    margin-right: 20px;
+                }
+
+                &:nth-of-type(4n) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .resume-samples {
+        order: 5;
+        justify-self: flex-end;
+        flex-basis: 25%;
+
+        .item-head a {
+            font-size: 80%;
+        }
+    }
+    
+    .resume-education {
+        order: 6;
+
+        > ul {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            li {
+                flex: 1 0 auto;
+            }
+        }
+    }
+
+
+
+
+//     .resume-profile,
+//     .resume-experience,
+//     .resume-samples {
+//         grid-column-start: 1;
+//         // grid-row-start: 1;
+//         align-self: start;
+//     }
+
+//     .resume-contact,
+//     .resume-skills,
+//     .resume-education {
+//         grid-column-start: 2;
+//         // grid-row-start: 1;
+//         align-self: start;
+//     }
+
+}
