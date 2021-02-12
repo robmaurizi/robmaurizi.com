@@ -7,13 +7,16 @@ const ArchiveHeader = ({title, type}) => {
     let titleString = '';
     switch(type) {
         case 'tag':
-            titleString = 'Tag Archive:';
+            titleString = `Tag Archive: ${title}`;
             break;
         case 'category':
-            titleString = 'Category Archive:';
+            titleString = `Category Archive: ${title}`;
             break;
         case 'date':
-            titleString = 'Posts Dated';
+            titleString = `Posts Dated ${title}`;
+            break;
+        case 'search':
+            titleString = `Search Results for "${title}"`;
             break;
 
         default:
@@ -22,7 +25,7 @@ const ArchiveHeader = ({title, type}) => {
     }
 
     return (
-        <h1 className="archive-header">{titleString} {title}</h1>
+        <h1 className="archive-header">{titleString}</h1>
     );
 };
 export default ArchiveHeader;
