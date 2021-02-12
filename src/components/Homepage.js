@@ -34,11 +34,6 @@ query Home {
   }
 `;
 
-/*
-
-
-
-*/
 const Homepage = () => {
 
     const {loading, error, data} = useQuery(HOME_QUERY);

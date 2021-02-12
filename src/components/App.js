@@ -9,10 +9,11 @@ import SinglePost from './SinglePost';
 import Category from './archive/Category';
 import Tag from './archive/Tag';
 import Date from './archive/Date';
-import Homepage from './Homepage';
 import Resume from './Resume';
 import Masthead from './Masthead';
 import Main from './Main';
+
+import HomeLoader from './HomeLoader';
 
 import NotFound from './NotFound';
 
@@ -30,7 +31,7 @@ class App extends Component {
               <CSSTransition timeout={0} classNames='fade' key={location.key}>
                 <Main>
                   <Switch location={location}>
-                    <Route exact path="/" component={Homepage} />
+                    <Route exact path="/" component={HomeLoader} />
                     <Route exact path="/resume" component={Resume} />
                     <Route exact path="/blog" component={PostList} />
                     <Route path="/blog/:year/:month/:day/:postname" component={SinglePost} />
@@ -38,6 +39,7 @@ class App extends Component {
                     <Route path="/blog/tag/:name" component={Tag} />
                     <Route exact path="/blog/:year" component={Date} />
                     <Route exact path="/blog/:year/:month" component={Date} />
+                    <Route exact path="/?s=:term" component={HomeLoader} />
                     <Route component={NotFound} />
                   </Switch>
                 </Main>
