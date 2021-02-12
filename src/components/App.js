@@ -14,6 +14,8 @@ import Resume from './Resume';
 import Masthead from './Masthead';
 import Main from './Main';
 
+import NotFound from './NotFound';
+
 class App extends Component {
 
   customHistory = createBrowserHistory();
@@ -36,6 +38,7 @@ class App extends Component {
                     <Route path="/blog/tag/:name" component={Tag} />
                     <Route exact path="/blog/:year" component={Date} />
                     <Route exact path="/blog/:year/:month" component={Date} />
+                    <Route component={NotFound} />
                   </Switch>
                 </Main>
               </CSSTransition>

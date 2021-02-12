@@ -1,0 +1,32 @@
+.not-found-content {
+
+
+    padding: 3em 20px;
+
+    // text-align: right;
+    transition: transform .5s ease;
+    transition-delay: .1s;
+
+    &:hover {
+        transform: rotate(180deg);
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    .second-message {
+        transform: rotate(180deg);
+        text-align: right;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .not-found-content {
+        width: 50%;
+        margin: 0 auto;
+        padding: 5em 0;
+    }
+
+}
