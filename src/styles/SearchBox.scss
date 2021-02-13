@@ -1,0 +1,35 @@
+@import './Common.scss';
+
+.search-box {
+
+    font-family: $font_headline;
+    border-bottom: 1px solid rgba($color_copy, .7);
+
+    form {
+        display: flex;
+        justify-content: space-between; 
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+
+    .search-input {
+        border: none;
+        // border-bottom: 1px solid rgba($color_copy, .7);
+        padding: .25em 0;
+        margin-right: .5em;
+        margin-bottom: 1px;
+        width: 150px;
+        flex: 1 0 auto;
+    }
+
+    .search-submit {
+        border: none;
+        // background: $color_copy;
+        background: none;
+        // color: $color_bg;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 3px 0 3px 6px;
+    }
+}

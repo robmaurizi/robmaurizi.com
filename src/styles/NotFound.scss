@@ -2,19 +2,26 @@
 
     .not-found-content {
 
-        transition: transform .5s ease;
-        transition-delay: .1s;
+        transition: transform .3s ease;
     
         &:hover {
             transform: rotate(180deg);
         }
     
     }
+
+    .not-found-search {
+        padding-top: 2em;
+        margin: 0 auto;
+    }
+
 }
 
-.not-found-content {
+.not-found-content,
+.not-found-search {
 
-    padding: 3em 20px;
+    padding: 0 20px;
+    margin-top: 2em;
 
     p {
         font-size: 1.25rem;
@@ -28,10 +35,10 @@
 
 @media screen and (min-width: 768px) {
 
-    .not-found-content {
-        width: 50%;
-        margin: 0 auto;
-        padding: 5em 0;
+    .not-found-content,
+    .not-found-search {
+        width: 70%;
+        margin: 2em auto 0;
     }
 
 }

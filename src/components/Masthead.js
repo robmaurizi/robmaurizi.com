@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, NavLink} from 'react-router-dom';
 import { useQuery, gql } from '@apollo/client';
 
+import SearchBox from './SearchBox';
+
 import '../styles/Masthead.scss';
 
 const MASTHEAD_QUERY = gql`
@@ -52,11 +54,8 @@ const Masthead = () => {
                       return <li key={i} className="menu-item"><NavLink activeClassName="is-active" to={menuItem.path}>{menuItem.label}</NavLink></li>
                     }
                 })}
-                {/* static nav until dynamic nav is ready */}
-                {/* <li className="menu-item"><NavLink activeClassName="is-active" to="/blog">Blog</NavLink></li> */}
-                {/* <li className="menu-item"><NavLink activeClassName="is-active" to="/about">About</NavLink></li> */}
-                {/* <li className="menu-item"><NavLink activeClassName="is-active" to="/resume">Resume</NavLink></li> */}
                 </ul>
+                <SearchBox />
             </nav>
         </header>
     )
