@@ -33,9 +33,24 @@
         width: 50%;
         margin: 0 auto;
     }
+
+    @media (prefers-color-scheme: dark) {
+        background-color: rgba( $dark_color_copy, .9);
+        color: $dark_color_bg;
+        font-weight: bold;
+    }
 }
 
 .posts-loading {
     display: block;
     margin: 0 auto;
+    svg {
+        fill: $color_copy;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        svg {
+            fill: $dark_color_copy;
+        }
+    }
 }

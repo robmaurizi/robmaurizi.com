@@ -1,4 +1,11 @@
 @import './Common.scss';
+@mixin skill_bkgd {
+    background-color: $color_highlight;
+    
+    @media (prefers-color-scheme: dark) {
+        background-color: $dark_color_highlight;
+    }
+}
 
 .resume-skill {
     display: flex;
@@ -43,31 +50,31 @@
 
     &[data-rating="5"] {
         i {
-            background-color: #900;
+            @include skill_bkgd();
         }
     }
 
     &[data-rating="4"] {
         i:nth-of-type(-n+4) {
-            background-color: #900;
+            @include skill_bkgd();
         }
     }
 
     &[data-rating="3"] {
         i:nth-of-type(-n+3) {
-            background-color: #900;
+            @include skill_bkgd();
         }
     }
 
     &[data-rating="2"] {
         i:nth-of-type(-n+2) {
-            background-color: #900;
+            @include skill_bkgd();
         }
     }
 
     &[data-rating="1"] {
         i:nth-of-type(1) {
-            background-color: #900;
+            @include skill_bkgd();
         }
     }
 
@@ -85,6 +92,10 @@
         background-color: rgba($color_copy, .35);
         height: 3px;
         margin-left: 4px;
+
+        @media (prefers-color-scheme: dark) {
+            background-color: rgba($dark_color_copy, .35);
+        }
 
         &:first-child {
             margin-left: 0;

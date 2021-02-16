@@ -63,7 +63,15 @@
 
             &.is-active,
             &:hover {
-                color: #900;
+                color: $color_highlight;
+            }
+
+            @media (prefers-color-scheme: dark) {
+
+                &.is-active,
+                &:hover {
+                    color: $dark_color_highlight;
+                }
             }
         
         }

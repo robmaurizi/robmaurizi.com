@@ -46,11 +46,25 @@
 
     a {
         text-decoration: none;
+        opacity: .9;
+
+        span {
+            transition: all .1s ease;
+            border-bottom: 1px solid transparent;
+        }
+
 
         &:hover {
             span {
-                text-decoration: underline;
+                border-bottom-color: $color_copy;
+                // text-decoration: underline;
+
+                @media (prefers-color-scheme: dark) {
+                    border-bottom-color: $dark_color_highlight;
+                }
             }
         }
+
+
     }
 }

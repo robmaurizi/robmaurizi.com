@@ -40,6 +40,13 @@
             font-family: $font_headline;
             opacity: .5;
         }
+
+        @media (prefers-color-scheme: dark) {
+            background: rgba($dark_color_copy, .1);
+            &:after {
+                color: $dark_color_copy;
+            }
+        }
     }
 
     @media screen and (max-width: 767px) {

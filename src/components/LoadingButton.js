@@ -7,7 +7,7 @@ const LoadingButton = ( {hasNextPage, isLoading, onNextPress} ) => {
         if ( !isLoading ) {
           return <button className="posts-load-more" onClick={onNextPress}>Load More</button>
         } else {
-          return <ReactLoading className="posts-loading" type="bubbles" color="#222" />; 
+          return <ReactLoading className="posts-loading" type="bubbles" />; 
         }
     }
 

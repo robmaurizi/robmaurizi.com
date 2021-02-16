@@ -93,7 +93,7 @@ const Category = ( {match} ) => {
 
 
     if ( loading ) {
-      return <ReactLoading className="main-loader" type="bubbles" color="#222" />
+      return <ReactLoading className="main-loader" type="bubbles" />
     }
 
     if ( error ) {

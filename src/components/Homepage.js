@@ -44,7 +44,7 @@ const Homepage = () => {
 
 
     if ( loading ) {
-      return <ReactLoading className="main-loader" type="bubbles" color="#222" />
+      return <ReactLoading className="main-loader" type="bubbles" />
     }
     if ( error ) {
         console.error(error);

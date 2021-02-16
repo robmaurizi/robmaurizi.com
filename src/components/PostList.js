@@ -79,7 +79,7 @@ const PostList = () => {
     }, [data] );
 
     if ( loading ) {
-      return <ReactLoading className="main-loader" type="bubble" color="#222" />
+      return <ReactLoading className="main-loader" type="bubble" />
     }
 
     if ( error ) {

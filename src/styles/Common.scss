@@ -1,5 +1,14 @@
 $color_bg: #FEFEFE;
 $color_copy: #222;
+$color_highlight: #900;
 
 $font_headline: 'Helvetica Neue', sans-serif;
 $font_body: 'Hoefler Text', 'Garamond', serif;
+
+$dark_color_bg: #222;
+$dark_color_copy: #FEFEFE;
+$dark_color_highlight: #fffd95;
+
+@mixin dark_color_copy {
+    color: rgba($dark_color_copy, .9);
+}

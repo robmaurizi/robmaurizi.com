@@ -15,6 +15,13 @@ body {
   overflow-x: hidden;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $dark_color_bg;
+    @include dark_color_copy;
+  }
+}
+
 a {
   color: inherit;
 }
@@ -72,4 +79,14 @@ figure {
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+
+  svg {
+    fill: $color_copy;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    svg {
+      fill: $dark_color_copy;
+    }
+  }
 }
