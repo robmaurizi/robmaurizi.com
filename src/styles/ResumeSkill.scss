@@ -13,6 +13,8 @@
     align-items: center;
     margin-bottom: .5em;
 
+    cursor: default;
+
 }
 
 .resume-skill-title {
@@ -48,33 +50,37 @@
         overflow: hidden;
     }
 
+    i {
+        @include skill_bkgd();
+    }
+
     &[data-rating="5"] {
         i {
-            @include skill_bkgd();
+            width: 100%;
         }
     }
 
     &[data-rating="4"] {
-        i:nth-of-type(-n+4) {
-            @include skill_bkgd();
+        i {
+            width: 80%;
         }
     }
 
     &[data-rating="3"] {
-        i:nth-of-type(-n+3) {
-            @include skill_bkgd();
+        i {
+            width: 60%;
         }
     }
 
     &[data-rating="2"] {
-        i:nth-of-type(-n+2) {
-            @include skill_bkgd();
+        i {
+            width: 40%;
         }
     }
 
     &[data-rating="1"] {
-        i:nth-of-type(1) {
-            @include skill_bkgd();
+        i {
+            width: 20%;
         }
     }
 
@@ -83,22 +89,20 @@
 .resume-skill-rating-graph {
     display: flex;
     width: 100%;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
+
+    background-color: rgba($color_copy, .35);
+
+    border-radius: 5px;
+    overflow: hidden;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: rgba($dark_color_copy, .35);
+    }
 
     i {
         display: block;
-        width: calc(20% - 4px);
-        background-color: rgba($color_copy, .35);
-        height: 3px;
-        margin-left: 4px;
-
-        @media (prefers-color-scheme: dark) {
-            background-color: rgba($dark_color_copy, .35);
-        }
-
-        &:first-child {
-            margin-left: 0;
-        }
+        height: 5px;
     }
 }
