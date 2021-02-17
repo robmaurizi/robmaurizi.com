@@ -12,7 +12,7 @@ const PostDate = ( {date, useTime} ) => {
     const pubDate = new Date( date ).toLocaleString( 'en-US', options );
 
     return (
-        <span className="post-date"><strong>Published</strong> { pubDate }</span>
+        <span className="post-date">Published <strong>{ pubDate }</strong></span>
     );
 };
 
