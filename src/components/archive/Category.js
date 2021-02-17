@@ -25,21 +25,7 @@ const FEED_QUERY = gql`query Category($name: ID!, $cursor: String) {
             featuredImage {
               node {
                 altText
-                sourceUrl
-              }
-            }
-            categories {
-              nodes {
-                name
-                uri
-                slug
-              }
-            }
-            tags {
-              nodes {
-                name
-                uri
-                slug
+                sourceUrl(size: MEDIUM_LARGE)
               }
             }
           }

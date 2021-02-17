@@ -22,7 +22,7 @@ query Home {
             node {
               altText
               id
-              sourceUrl
+              sourceUrl(size: MEDIUM_LARGE)
             }
           }
           id

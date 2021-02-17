@@ -27,7 +27,7 @@ const FEED_QUERY = gql`query PaginatedPosts($cursor: String) {
             node {
               id
               altText
-              sourceUrl
+              sourceUrl(size: MEDIUM_LARGE)
             }
           }
         }
