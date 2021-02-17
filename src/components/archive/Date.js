@@ -24,21 +24,7 @@ const FEED_QUERY = gql`query DatePosts($cursor: String, $dateQuery: DateQueryInp
           featuredImage {
             node {
               altText
-              sourceUrl
-            }
-          }
-          categories {
-            nodes {
-              name
-              uri
-              slug
-            }
-          }
-          tags {
-            nodes {
-              name
-              uri
-              slug
+              sourceUrl(size: MEDIUM_LARGE)
             }
           }
         }
