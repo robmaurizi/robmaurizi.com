@@ -3,6 +3,7 @@ import { useQuery, gql } from '@apollo/client';
 import ReactLoading from 'react-loading';
 
 import ResumeSkill from './ResumeSkill';
+import ResumeExperience from './ResumeExperience';
 
 import '../styles/Resume.scss';
 
@@ -23,6 +24,10 @@ const RESUME_QUERY = gql`query Resume {
           jobTitle
           location
           startDate
+          skillsUsed {
+              skill
+              value
+          }
         }
         profile
         skills {
@@ -92,8 +97,7 @@ const Resume = () => {
                 { resumeData.experience.map( (job, i) => {
                     return (
                         <li key={i}>
-                            <h3 className="item-head">{ job.jobTitle }, { job.company }, { job.location}; { job.startDate }&ndash;{ job.endDate }</h3>
-                            <div className="job-description" dangerouslySetInnerHTML={{__html: job.description}} />
+                            <ResumeExperience job={job} />
                         </li>
                     );
                 })}
