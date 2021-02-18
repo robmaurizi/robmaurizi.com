@@ -41,6 +41,28 @@
         }
     }
 
+    .resume-samples {
+
+        ul.job-tech {
+            list-style-type: none;
+            margin: 0 0 .5em;
+            padding: 0;
+    
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+    
+            li {
+                margin-right: .5em;
+            }
+    
+            .icon {
+                width: 1em;
+                display: block;
+            }
+        }
+        
+    }
 
 
 }
@@ -53,10 +75,6 @@
 
 .item-head {
     margin-bottom: .5em;
-
-    a {
-        font-weight: normal;
-    }
 }
 
 
@@ -158,10 +176,7 @@
         order: 5;
         justify-self: flex-end;
         flex-basis: 25%;
-
-        .item-head a {
-            font-size: 80%;
-        }
+    
     }
     
     .resume-education {
@@ -178,23 +193,5 @@
         }
     }
 
-
-
-
-//     .resume-profile,
-//     .resume-experience,
-//     .resume-samples {
-//         grid-column-start: 1;
-//         // grid-row-start: 1;
-//         align-self: start;
-//     }
-
-//     .resume-contact,
-//     .resume-skills,
-//     .resume-education {
-//         grid-column-start: 2;
-//         // grid-row-start: 1;
-//         align-self: start;
-//     }
-
 }
+
