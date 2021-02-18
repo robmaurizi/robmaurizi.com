@@ -3,6 +3,9 @@ import { useQuery, gql } from '@apollo/client';
 import ReactLoading from 'react-loading';
 
 import ResumeSkill from './ResumeSkill';
+import ResumeExperience from './ResumeExperience';
+import DevIcon from './DevIcon';
+
 
 import '../styles/Resume.scss';
 
@@ -23,6 +26,10 @@ const RESUME_QUERY = gql`query Resume {
           jobTitle
           location
           startDate
+          skillsUsed {
+              skill
+              value
+          }
         }
         profile
         skills {
@@ -34,6 +41,7 @@ const RESUME_QUERY = gql`query Resume {
           url
           title
           description
+          techStack
         }
       }
     }
@@ -92,8 +100,7 @@ const Resume = () => {
                 { resumeData.experience.map( (job, i) => {
                     return (
                         <li key={i}>
-                            <h3 className="item-head">{ job.jobTitle }, { job.company }, { job.location}; { job.startDate }&ndash;{ job.endDate }</h3>
-                            <div className="job-description" dangerouslySetInnerHTML={{__html: job.description}} />
+                            <ResumeExperience job={job} />
                         </li>
                     );
                 })}
@@ -104,9 +111,18 @@ const Resume = () => {
                 <h2 className="section-head">Work Samples</h2>
                 <ul>
                 { resumeData.workSamples.map( (job, i) => {
+
                     return (
                         <li key={i}>
-                            <h3 className="item-head">{ job.title }, { job.year }: <a href={job.url} target="_blank" rel="noreferrer">{ job.url }</a></h3>
+                            <h3 className="item-head"><a href={job.url} target="_blank" rel="noreferrer">{ job.title }</a>, { job.year }</h3>
+                            { ( job.techStack ) 
+                                ? <><ul className="job-tech">
+                                    { job.techStack.slice().sort().map( (item, i) => {
+                                        return <li key={i}><DevIcon name={item} /></li>
+                                    }) }
+                                </ul></>
+                                : null 
+                            }
                             <div className="job-description" dangerouslySetInnerHTML={{__html: job.description}} />
                         </li>
                     );
@@ -127,19 +143,6 @@ const Resume = () => {
                     })}
                 </ul>
             </section>   
-{/* 
-
-            <div className="resume-section">
-
-
-            </div>
-
-            <div className="resume-section">
-
-
-                
-            </div> */}
-    
 
         </article>
 
