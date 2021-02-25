@@ -27,10 +27,13 @@ const ResumeExperience = ( {job} ) => {
         });
     }
 
+    const jobDates = () => {
+        return (job.startDate !== job.endDate) ? job.startDate + "\u2013" + job.endDate : job.startDate;
+    }
 
     return (
         <>
-            <h3 className="item-head">{ job.jobTitle }, { job.company }, { job.location}; { job.startDate }&ndash;{ job.endDate }</h3>
+            <h3 className="item-head">{ job.jobTitle }, { job.company }, { job.location}; { jobDates() }</h3>
             <Reveal>
                 <div className="job-skills">
                     <div className="job-skills-graph">
