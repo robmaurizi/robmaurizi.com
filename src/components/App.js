@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import { createBrowserHistory } from "history";
+
+import GA from '../utils/GoogleAnalytics';
 
 import PostList from './PostList';
 import SinglePost from './SinglePost';
@@ -22,6 +24,7 @@ class App extends Component {
   customHistory = createBrowserHistory();
 
   render() {
+
     return (
       <Router history={this.customHistory}>
         <Route render={({ location }) => (
@@ -30,6 +33,7 @@ class App extends Component {
             <TransitionGroup>
               <CSSTransition timeout={0} classNames='fade' key={location.key}>
                 <Main>
+                  { GA.init() && <GA.RouteTracker /> }
                   <Switch location={location}>
                     <Route exact path="/" component={HomeLoader} />
                     <Route exact path="/resume" component={Resume} />
